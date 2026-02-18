@@ -1,0 +1,90 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+.app-header.scrolled {
+  background: var(--mat-sys-primary-container);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+
+.app-header {
+  display: flex;
+  align-items: center;
+  // background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: flex;
+  gap: 20px;
+  margin-left: 40px;
+}
+
+.desktop-menu a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Active Link */
+.active-link {
+  color: var(--mat-sys-primary) !important;
+  font-weight: 600;
+}
+
+/* Mobile Menu Button Hidden on Desktop */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* Mobile Drawer */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--mat-sys-surface);
+  position: fixed;
+  width: 100%;
+  top: 64px;
+  z-index: 1;
+}
+
+.mobile-menu a {
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--mat-sys-on-surface);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}

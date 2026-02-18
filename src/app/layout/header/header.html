@@ -1,0 +1,55 @@
+<mat-toolbar class="app-header" [class.scrolled]="isScrolled">
+  <div style="max-width: 1440px;display: flex;align-items: center;width: 100%;margin-inline: auto;">
+  <!-- Logo -->
+  <span class="logo">My App</span>
+
+  <!-- Desktop Menu -->
+  <nav class="desktop-menu">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a mat-button routerLink="/about" routerLinkActive="active-link">About Us</a>
+    <a mat-button routerLink="/activities" routerLinkActive="active-link">Activities</a>
+    <a mat-button routerLink="/virtual-tour" routerLinkActive="active-link">Virtual Tour</a>
+    <a mat-button routerLink="/testimonials" routerLinkActive="active-link">Testimonials</a>
+    <a mat-button routerLink="/alumni" routerLinkActive="active-link">Alumni</a>
+    <a mat-button routerLink="/blogs" routerLinkActive="active-link">Blogs</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact Us</a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <!-- 🎨 Theme Color Dropdown -->
+  <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+    <mat-icon>palette</mat-icon>
+  </button>
+
+  <mat-menu #themeMenu="matMenu">
+    <button mat-menu-item (click)="setTheme('theme-blue')">Blue</button>
+    <button mat-menu-item (click)="setTheme('theme-green')">Green</button>
+    <button mat-menu-item (click)="setTheme('theme-red')">Red</button>
+  </mat-menu>
+
+  <!-- 🌙 Dark / Light Toggle -->
+  <button mat-icon-button (click)="toggleDarkMode()">
+    <mat-icon>
+      {{ isDark ? 'light_mode' : 'dark_mode' }}
+    </mat-icon>
+  </button>
+
+  <!-- ☰ Mobile Menu -->
+  <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  </div>
+</mat-toolbar>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" *ngIf="isMobileMenuOpen">
+  <a routerLink="/" (click)="toggleMenu()">Home</a>
+  <a routerLink="/about" (click)="toggleMenu()">About Us</a>
+  <a routerLink="/activities" (click)="toggleMenu()">Activities</a>
+  <a routerLink="/virtual-tour" (click)="toggleMenu()">Virtual Tour</a>
+  <a routerLink="/testimonials" (click)="toggleMenu()">Testimonials</a>
+  <a routerLink="/alumni" (click)="toggleMenu()">Alumni</a>
+  <a routerLink="/blogs" (click)="toggleMenu()">Blogs</a>
+  <a routerLink="/contact" (click)="toggleMenu()">Contact Us</a>
+</div>
