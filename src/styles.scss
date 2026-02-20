@@ -60,3 +60,28 @@ html, body {
   height: 100%;
   margin: 0;
 }
+body {
+  cursor: none;
+}
+
+.cursor-outer {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ff9800;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursor-inner {
+  width: 8px;
+  height: 8px;
+  background: #ff9800;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
